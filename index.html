@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a07">
+  <meta name="description" content="Smoking Spanners Vehicle Repairs. Mobile vehicle technician for servicing, diagnostics, brakes and repairs. Call, WhatsApp or text for an enquiry.">
+  <title>Smoking Spanners | Mobile Vehicle Technician</title>
+  <style>
+    :root{--green:#8cf21e;--bg:#080a07;--panel:#141c12;--line:#33452b;--soft:#b6c3b2}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;background:var(--bg);color:white;font:15px/1.65 Arial,Helvetica,sans-serif}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+    .wrap{width:min(1140px,calc(100% - 36px));margin:auto}
+    .bar{background:var(--green);color:#0b1606;font-size:11px;font-weight:900;letter-spacing:.05em}
+    .bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0}
+    .bar a{white-space:nowrap}
+    header{position:sticky;top:0;z-index:20;background:#080c08f5;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    .brand-mark{width:45px;height:45px;display:grid;place-items:center;border:1px solid #4b7d2d;background:#182a11;border-radius:12px;font-size:26px;color:var(--green)}
+    .brand-words{position:relative;display:flex;flex-direction:column;line-height:1.03}
+    .brand-words strong{font-size:23px;font-weight:1000;letter-spacing:-1.2px;font-style:italic;text-transform:uppercase}
+    .brand-words strong em{color:var(--green)}
+    .brand-words small{font-size:9px;letter-spacing:1.8px;color:#bccbb6;margin-top:5px;font-weight:bold;text-transform:uppercase}
+    .smoke{position:absolute;width:8px;height:15px;left:82px;top:0;border-radius:50%;pointer-events:none;background:#a9f98a70;filter:blur(5px);opacity:0;animation:floatSmoke 5s infinite}
+    .smoke.two{left:102px;animation-delay:1.6s}.smoke.three{left:69px;animation-delay:3.2s}
+    @keyframes floatSmoke{0%{opacity:0;transform:translateY(1px) scale(.5)}22%{opacity:.42}100%{opacity:0;transform:translate(18px,-40px) scale(2)}}
+    .desktop-links{display:flex;align-items:center;gap:23px;font-size:13px;font-weight:bold}
+    .desktop-links a:hover{color:var(--green)}
+    .menu{display:none;position:relative}
+    .menu summary{list-style:none;border:1px solid #5c7251;border-radius:9px;width:46px;height:45px;display:grid;place-items:center;cursor:pointer;font-size:26px;line-height:1}
+    .menu summary::-webkit-details-marker{display:none}
+    .menu[open] summary{color:var(--green);border-color:var(--green)}
+    .menu-items{position:absolute;right:0;top:53px;width:min(310px,calc(100vw - 36px));background:#0e180d;border:1px solid #526d40;border-radius:11px;padding:12px;box-shadow:0 18px 35px #000b}
+    .menu-items a{display:block;padding:12px;border-bottom:1px solid #2e4228;font-weight:bold}
+    .menu-items a:last-child{border:0;background:var(--green);color:#101809;border-radius:7px;margin-top:10px;text-align:center}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:49px;padding:12px 19px;border-radius:9px;background:var(--green);color:#071005;font-weight:900;border:1px solid transparent;font-size:14px;transition:transform .15s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.outline{background:transparent;border-color:#5a734f;color:white}
+    .btn.dark{background:#111a10;border-color:#567249;color:white}
+    .hero{background:radial-gradient(ellipse at 75% 40%,#223d16,transparent 60%),#080c08;border-bottom:1px solid var(--line)}
+    .hero-inner{min-height:550px;display:grid;grid-template-columns:1fr .86fr;gap:35px;align-items:center;padding:67px 0}
+    .eyebrow{color:var(--green);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(48px,6vw,81px);font-weight:1000;line-height:1.03;letter-spacing:-3px;margin:20px 0;text-transform:uppercase}
+    h1 span,h2 em{color:var(--green);font-style:italic}
+    .hero p{max-width:500px;color:#c3d0be;font-size:17px}
+    .buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .proof{display:flex;gap:16px;flex-wrap:wrap;margin-top:31px;font-size:11px;font-weight:900;color:#d7dfd1;text-transform:uppercase}
+    .proof span::before{content:'✓';color:var(--green);margin-right:7px}
+    .hero-panel{position:relative;min-height:360px;border:1px solid #426b2c;border-radius:20px;background:linear-gradient(145deg,#1d3016,#0b100a 75%);box-shadow:0 20px 70px #0008;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;text-align:center;padding:30px}
+    .hero-panel::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:#77f11e12;filter:blur(30px)}
+    .hero-panel .tool{font-size:95px;filter:drop-shadow(0 0 20px #82f73154);transform:rotate(-22deg);line-height:1.2}
+    .hero-panel strong{color:var(--green);font-size:26px;letter-spacing:1px;font-weight:1000;line-height:1.2;text-transform:uppercase;position:relative}
+    .hero-panel span{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#e3f5dd;position:relative;margin-top:12px}
+    section{padding:76px 0}
+    .heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:29px}
+    h2{font-size:clamp(31px,4.3vw,52px);letter-spacing:-1.8px;line-height:1.1;text-transform:uppercase;margin:10px 0 0}
+    .heading p{max-width:390px;color:var(--soft);margin:0}
+    .services{background:#0c110b}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .card{padding:25px 22px;background:linear-gradient(140deg,#1d291a,#111711);border:1px solid #34462f;border-radius:15px;min-height:240px}
+    .card .symbol{font-size:30px;color:var(--green);margin-bottom:24px}
+    .card h3{font-size:19px;line-height:1.2;margin-bottom:9px}
+    .card p{font-size:13px;color:var(--soft);margin-bottom:0}
+    .about{background:#121b0f}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .about-copy p{color:#cbd6c7}
+    .mot{padding:25px;border:1px solid #628a46;border-left:5px solid var(--green);border-radius:13px;background:#10190f}
+    .mot h3{color:var(--green);text-transform:uppercase;margin-bottom:10px}
+    .mot p{color:#cbd8c5;margin:0}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .step{border-top:2px solid #466b31;padding:20px 6px 0}
+    .step b{font-size:42px;color:var(--green)}
+    .step p{color:var(--soft);font-size:14px}
+    .reviews{background:#101a0e}
+    .reviewbox{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap;padding:27px;border:1px solid #49613c;border-radius:15px;background:#172316}
+    .reviewbox p{color:#c3d2ba;max-width:650px;margin-bottom:0}
+    .reviewlinks{display:flex;flex-wrap:wrap;gap:10px}
+    .reviewlinks .btn{white-space:nowrap}
+    .enquiry{background:radial-gradient(ellipse at top right,#253d19,transparent 63%),#0a1009}
+    .contact-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:42px}
+    .number{font-size:clamp(26px,3vw,38px);font-weight:1000;color:var(--green)}
+    .muted{color:var(--soft)}
+    .formbox{background:#162115;border:1px solid #426035;border-radius:16px;padding:26px}
+    .formbox h3{margin-bottom:20px;font-size:23px}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{display:block;font-size:12px;font-weight:850;margin-bottom:5px}
+    input,select,textarea{width:100%;min-height:45px;border:1px solid #506247;border-radius:7px;background:#0d160b;color:white;padding:11px;outline:none}
+    input::placeholder,textarea::placeholder{color:#8f9d88}
+    textarea{resize:vertical;min-height:92px}
+    .wide{grid-column:1/-1}
+    .form-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+    .form-buttons .btn{width:100%;padding:10px;font-size:13px}
+    .whatsapp{background:#25d366;color:#09200f}
+    .help{font-size:11px;color:#b4c2ae;margin-top:14px;line-height:1.6}
+    #notice{color:var(--green);font-size:13px;min-height:20px}
+    .faq{background:#0d120c}
+    details.question{border-bottom:1px solid #42583a;padding:16px 0}
+    details.question summary{cursor:pointer;font-weight:bold}
+    details.question p{color:var(--soft);padding-top:10px;margin-bottom:0}
+    footer{border-top:1px solid #394d34;padding:32px 0 110px;color:#aabca4;font-size:13px}
+    .footer-row{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}
+    .mobile-bottom{display:none}
+    @media(max-width:900px){.desktop-links{gap:12px;font-size:12px}.hero-inner{grid-template-columns:1fr 1fr}.cards{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:740px){.nav{min-height:69px}.desktop-links{display:none}.menu{display:block}.hero-inner{grid-template-columns:1fr;min-height:0;padding:52px 0}.hero-panel{min-height:250px}.hero-panel .tool{font-size:65px}.heading{display:block}.heading p{margin-top:15px}.about-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.steps .step{padding-top:10px}.formbox{padding:19px}.mobile-bottom{position:fixed;z-index:15;bottom:0;left:0;right:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#080c08f2;padding:10px 15px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #465e39}.mobile-bottom a{padding:11px;border-radius:8px;text-align:center;background:var(--green);color:#10190b;font-weight:900}.mobile-bottom a:last-child{background:#182317;color:white;border:1px solid #647d51}}
+    @media(max-width:440px){.bar{font-size:9px}.brand-mark{width:36px;height:36px;font-size:21px}.brand-words strong{font-size:18px}.brand-words small{font-size:7px;letter-spacing:1px}h1{font-size:49px;letter-spacing:-2px}.hero p{font-size:14px}.cards{grid-template-columns:1fr 1fr;gap:10px}.card{min-height:215px;padding:16px}.card h3{font-size:16px}.card .symbol{margin-bottom:13px}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.form-buttons{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body id="top">
+  <div class="bar"><div class="wrap"><span>MOBILE VEHICLE TECHNICIAN</span><a href="tel:+447543366465">CALL 07543 366465 ↗</a></div></div>
+  <header><div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Smoking Spanners home">
+      <span class="brand-mark" aria-hidden="true">🔧</span>
+      <span class="brand-words"><span class="smoke"></span><span class="smoke two"></span><span class="smoke three"></span><strong>Smoking <em>Spanners</em></strong><small>Vehicle repairs</small></span>
+    </a>
+    <nav class="desktop-links" aria-label="Main navigation"><a href="#services">Services</a><a href="#about">About</a><a href="#how">How it works</a><a href="#reviews">Reviews</a><a href="#faqs">FAQs</a><a class="btn" href="#contact">Get a Quote</a></nav>
+    <details class="menu" id="menu"><summary aria-label="Open navigation menu">☰</summary><nav class="menu-items" aria-label="Mobile navigation"><a href="#top">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#how">How it works</a><a href="#reviews">Reviews</a><a href="#faqs">FAQs</a><a href="#contact">Contact / Get a Quote</a></nav></details>
+  </div></header>
+
+  <main>
+    <section class="hero"><div class="wrap hero-inner">
+      <div><div class="eyebrow">Your local mobile vehicle technician</div><h1>THE GARAGE<br>COMES TO <span>YOU.</span></h1><p>Vehicle problems? Smoking Spanners offers mobile vehicle servicing, diagnostics and repairs. Tell us what your car needs and discuss the next step.</p><div class="buttons"><a class="btn" href="tel:+447543366465">☎ Call 07543 366465</a><a class="btn outline" href="#contact">Get a Quote ↗</a></div><div class="proof"><span>Mobile repairs</span><span>Diagnostics</span><span>Servicing</span></div></div>
+      <div class="hero-panel" aria-label="Smoking Spanners vehicle repairs branding"><div class="tool" aria-hidden="true">🔧</div><strong>SMOKING SPANNERS</strong><span>Vehicle Repairs • Mobile Service</span></div>
+    </div></section>
+
+    <section class="services" id="services"><div class="wrap"><div class="heading"><div><span class="eyebrow">What we do</span><h2>KEEPING YOU <em>MOVING.</em></h2></div><p>Enquire about routine maintenance, faults and repair work.</p></div><div class="cards">
+      <article class="card"><div class="symbol">⚙</div><h3>Servicing &amp; Repairs</h3><p>Maintenance and repair work to help keep your vehicle running.</p></article>
+      <article class="card"><div class="symbol">⌁</div><h3>Diagnostics</h3><p>Warning lights, performance problems and investigating faults.</p></article>
+      <article class="card"><div class="symbol">◉</div><h3>Brakes</h3><p>Brake inspections, faults and replacement of suitable components.</p></article>
+      <article class="card"><div class="symbol">🔧</div><h3>Engine Repairs</h3><p>Discuss engine issues and find out what can be assessed or repaired.</p></article>
+    </div></div></section>
+
+    <section class="about" id="about"><div class="wrap about-grid"><div class="about-copy"><span class="eyebrow">About Smoking Spanners</span><h2>VEHICLE REPAIRS <em>WITH CARE.</em></h2><p>Smoking Spanners is a mobile vehicle repair business focused on a convenient, approachable service. You can get in touch to discuss a problem, request a service or ask about a repair at a suitable location.</p><p>Contact us with your vehicle details and postcode to find out about available work and service areas.</p><a class="btn outline" href="#contact">Talk About Your Vehicle</a></div><div class="mot"><h3>MOT Testing Experience</h3><p>MOT testing experience helps provide peace of mind through careful vehicle inspections informed by legal roadworthiness and servicing requirements, with the safety of you, your passengers and other road users in mind.</p><p class="help">An inspection or repair is not an official MOT test unless carried out as one at an authorised MOT testing station.</p></div></div></section>
+
+    <section id="how"><div class="wrap"><span class="eyebrow">Simple from the start</span><h2>HOW IT <em>WORKS.</em></h2><div class="steps"><div class="step"><b>01.</b><h3>Contact us</h3><p>Call, text or use WhatsApp to tell us about the vehicle.</p></div><div class="step"><b>02.</b><h3>Explain the issue</h3><p>Share the symptoms, warning lights, registration and postcode.</p></div><div class="step"><b>03.</b><h3>Agree the next step</h3><p>Discuss availability, whether the work is suitable for a mobile visit and any costs.</p></div></div></div></section>
+
+    <section class="reviews" id="reviews"><div class="wrap"><div class="reviewbox"><div><span class="eyebrow">Customer feedback</span><h2>REVIEWS &amp; <em>RECOMMENDATIONS.</em></h2><p>Find Smoking Spanners on Google or Facebook to read feedback or leave a review on those platforms. Reviews are not stored on this website.</p></div><div class="reviewlinks"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Smoking%20Spanners%20Vehicle%20Repairs" target="_blank" rel="noopener noreferrer">★ Find on Google</a><a class="btn dark" href="https://www.facebook.com/search/pages/?q=Smoking%20Spanners%20Vehicle%20Repairs" target="_blank" rel="noopener noreferrer">f &nbsp; Find on Facebook</a></div><p class="help">These links search for the business. Replace them with the official profile links once confirmed.</p></div></div></section>
+
+    <section class="enquiry" id="contact"><div class="wrap contact-grid"><div><span class="eyebrow">Get in touch</span><h2>LET'S GET YOU <em>BACK ON THE ROAD.</em></h2><p class="muted">Tell us about the vehicle and choose WhatsApp or SMS to prepare a message. Or call us directly.</p><a class="number" href="tel:+447543366465">07543 366465</a><p class="muted">Tap the number to call.</p></div>
+      <form class="formbox" id="enquiry-form"><h3>Quick Enquiry</h3><div class="fields">
+        <div><label for="customer">Your name</label><input id="customer" autocomplete="name" maxlength="80" placeholder="Your name"></div>
+        <div><label for="vehicle">Vehicle make &amp; model *</label><input id="vehicle" required maxlength="100" placeholder="e.g. Ford Focus"></div>
+        <div><label for="registration">Registration</label><input id="registration" maxlength="20" placeholder="e.g. AB12 CDE"></div>
+        <div><label for="postcode">Postcode or area</label><input id="postcode" autocomplete="postal-code" maxlength="70" placeholder="Your area"></div>
+        <div class="wide"><label for="service">Service required *</label><select id="service" required><option value="">Please select</option><option>Servicing &amp; repairs</option><option>Vehicle diagnostics</option><option>Brakes</option><option>Engine repairs</option><option>Other / not sure</option></select></div>
+        <div class="wide"><label for="issue">Describe the problem</label><textarea id="issue" maxlength="1200" placeholder="Tell us about the symptoms or work needed..."></textarea></div>
+      </div><div class="form-buttons"><button type="submit" class="btn whatsapp">WhatsApp</button><button type="button" class="btn" id="sms">SMS</button><a class="btn dark" href="tel:+447543366465">Call Now</a></div><p class="help">WhatsApp and SMS open a prepared message. You must press Send yourself. Call Now does not require the form. No details are stored by this website. Standard SMS charges may apply.</p><p id="notice" role="status" aria-live="polite"></p></form>
+    </div></section>
+
+    <section class="faq" id="faqs"><div class="wrap"><span class="eyebrow">Good to know</span><h2>FREQUENTLY ASKED <em>QUESTIONS.</em></h2><details class="question"><summary>Do you travel to customers?</summary><p>Yes, Smoking Spanners offers mobile vehicle services. Please provide your postcode to confirm the service area and availability.</p></details><details class="question"><summary>Can you help with warning lights?</summary><p>Diagnostics are among the advertised services. Explain the warning light and symptoms when contacting us.</p></details><details class="question"><summary>Can I get a quote?</summary><p>Yes, send the vehicle details and work required. Some faults need inspection before a price can be confirmed.</p></details><details class="question"><summary>Can I leave a review on the website?</summary><p>Reviews are handled by Google and Facebook, rather than stored here. Use the links in the Reviews section to find the business.</p></details></div></section>
+  </main>
+  <footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Smoking Spanners Vehicle Repairs</span><span>Mobile Vehicle Technician • Servicing • Diagnostics • Repairs</span><a href="tel:+447543366465">07543 366465</a></div></footer>
+  <div class="mobile-bottom"><a href="tel:+447543366465">☎ Call Now</a><a href="#contact">Get a Quote ↗</a></div>
+  <script>
+    (()=>{
+      const menu=document.getElementById('menu');
+      menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.open=false}));
+      document.addEventListener('click',e=>{if(menu.open&&!menu.contains(e.target))menu.open=false});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')menu.open=false});
+      document.getElementById('year').textContent=new Date().getFullYear();
+      const form=document.getElementById('enquiry-form'),notice=document.getElementById('notice');
+      const val=id=>document.getElementById(id).value.trim();
+      function message(){return ['Hi Smoking Spanners, I would like to enquire about my vehicle.',val('customer')?'Name: '+val('customer'):'','Vehicle: '+val('vehicle'),val('registration')?'Registration: '+val('registration'):'',val('postcode')?'Area: '+val('postcode'):'','Service: '+val('service'),val('issue')?'Details: '+val('issue'):''].filter(Boolean).join('\n')}
+      function valid(){if(!form.reportValidity()){notice.textContent='Please complete the required fields.';return false}notice.textContent='';return true}
+      form.addEventListener('submit',e=>{e.preventDefault();if(!valid())return;notice.textContent='Opening WhatsApp — review your message and press Send.';location.href='https://wa.me/447543366465?text='+encodeURIComponent(message())});
+      document.getElementById('sms').addEventListener('click',()=>{if(!valid())return;const apple=/iPad|iPhone|iPod/i.test(navigator.userAgent);notice.textContent='Opening SMS — review your message and press Send.';location.href='sms:+447543366465'+(apple?'&':'?')+'body='+encodeURIComponent(message())});
+    })();
+  </script>
+</body>
+</html>
