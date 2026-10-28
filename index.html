@@ -54,6 +54,10 @@
     .hero-panel .tool{font-size:95px;filter:drop-shadow(0 0 20px #82f73154);transform:rotate(-22deg);line-height:1.2}
     .hero-panel strong{color:var(--green);font-size:26px;letter-spacing:1px;font-weight:1000;line-height:1.2;text-transform:uppercase;position:relative}
     .hero-panel span{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#e3f5dd;position:relative;margin-top:12px}
+    /* Full supplied brand artwork replaces the decorative hero placeholder. */
+    .hero-panel{min-height:0;padding:0;border:0;border-radius:0;background:#000;box-shadow:none;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .hero-panel::before{display:none}
+    .hero-full-logo{display:block;width:100%;height:auto;max-width:650px;object-fit:contain}
     section{padding:76px 0}
     .heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:29px}
     h2{font-size:clamp(31px,4.3vw,52px);letter-spacing:-1.8px;line-height:1.1;text-transform:uppercase;margin:10px 0 0}
@@ -106,6 +110,7 @@
     @media(max-width:900px){.desktop-links{gap:12px;font-size:12px}.hero-inner{grid-template-columns:1fr 1fr}.cards{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}}
     @media(max-width:740px){.nav{min-height:92px}.brand-logo{width:154px}.desktop-links{display:none}.menu{display:block}.hero-inner{grid-template-columns:1fr;min-height:0;padding:52px 0}.hero-panel{min-height:250px}.hero-panel .tool{font-size:65px}.heading{display:block}.heading p{margin-top:15px}.about-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.steps .step{padding-top:10px}.formbox{padding:19px}.mobile-bottom{position:fixed;z-index:15;bottom:0;left:0;right:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#080c08f2;padding:10px 15px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #465e39}.mobile-bottom a{padding:11px;border-radius:8px;text-align:center;background:var(--green);color:#10190b;font-weight:900}.mobile-bottom a:last-child{background:#182317;color:white;border:1px solid #647d51}}
     @media(max-width:440px){.brand-logo{width:145px}.bar{font-size:9px}.brand-mark{width:36px;height:36px;font-size:21px}.brand-words strong{font-size:18px}.brand-words small{font-size:7px;letter-spacing:1px}h1{font-size:49px;letter-spacing:-2px}.hero p{font-size:14px}.cards{grid-template-columns:1fr 1fr;gap:10px}.card{min-height:215px;padding:16px}.card h3{font-size:16px}.card .symbol{margin-bottom:13px}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.form-buttons{grid-template-columns:1fr}}
+    @media(max-width:740px){.hero-panel{min-height:0!important;margin-top:14px}.hero-full-logo{max-width:100%}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
@@ -120,7 +125,7 @@
   <main>
     <section class="hero"><div class="wrap hero-inner">
       <div><div class="eyebrow">Your local mobile vehicle technician</div><h1>THE GARAGE<br>COMES TO <span>YOU.</span></h1><p>Vehicle problems? Smoking Spanners offers mobile vehicle servicing, diagnostics and repairs. Tell us what your car needs and discuss the next step.</p><div class="buttons"><a class="btn" href="tel:+447543366465">☎ Call 07543 366465</a><a class="btn outline" href="#contact">Get a Quote ↗</a></div><div class="proof"><span>Mobile repairs</span><span>Diagnostics</span><span>Servicing</span></div></div>
-      <div class="hero-panel" aria-label="Smoking Spanners vehicle repairs branding"><div class="tool" aria-hidden="true">🔧</div><strong>SMOKING SPANNERS</strong><span>Vehicle Repairs • Mobile Service</span></div>
+      <div class="hero-panel" aria-label="Smoking Spanners full logo"><img class="hero-full-logo" src="smoking-spanners-full-logo.jpg" alt="Smoking Spanners Vehicle Repairs — servicing and repairs, diagnostics, brakes and engine repairs. Call 07543 366465" width="1536" height="1024" decoding="async" fetchpriority="high"></div>
     </div></section>
 
     <section class="services" id="services"><div class="wrap"><div class="heading"><div><span class="eyebrow">What we do</span><h2>KEEPING YOU <em>MOVING.</em></h2></div><p>Enquire about routine maintenance, faults and repair work.</p></div><div class="cards">
