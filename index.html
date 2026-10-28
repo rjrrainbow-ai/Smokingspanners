@@ -95,6 +95,9 @@
     input::placeholder,textarea::placeholder{color:#8f9d88}
     textarea{resize:vertical;min-height:92px}
     .wide{grid-column:1/-1}
+    .field-help{display:block;color:#aebfab;font-size:11px;margin-top:5px}
+    input[type="date"]{color-scheme:dark}
+    input[type="date"]::-webkit-calendar-picker-indicator{cursor:pointer}
     .form-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
     .form-buttons .btn{width:100%;padding:10px;font-size:13px}
     .whatsapp{background:#25d366;color:#09200f}
@@ -141,15 +144,18 @@
 
     <section class="reviews" id="reviews"><div class="wrap"><div class="reviewbox"><div><span class="eyebrow">Customer feedback</span><h2>REVIEWS &amp; <em>RECOMMENDATIONS.</em></h2><p>Find Smoking Spanners on Google or Facebook to read feedback or leave a review on those platforms. Reviews are not stored on this website.</p></div><div class="reviewlinks"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Smoking%20Spanners%20Vehicle%20Repairs" target="_blank" rel="noopener noreferrer">★ Find on Google</a><a class="btn dark" href="https://www.facebook.com/search/pages/?q=Smoking%20Spanners%20Vehicle%20Repairs" target="_blank" rel="noopener noreferrer">f &nbsp; Find on Facebook</a></div><p class="help">These links search for the business. Replace them with the official profile links once confirmed.</p></div></div></section>
 
-    <section class="enquiry" id="contact"><div class="wrap contact-grid"><div><span class="eyebrow">Get in touch</span><h2>LET'S GET YOU <em>BACK ON THE ROAD.</em></h2><p class="muted">Tell us about the vehicle and choose WhatsApp or SMS to prepare a message. Or call us directly.</p><a class="number" href="tel:+447543366465">07543 366465</a><p class="muted">Tap the number to call.</p></div>
+    <section class="enquiry" id="contact"><div class="wrap contact-grid"><div><span class="eyebrow">Get in touch</span><h2>LET'S GET YOU <em>BACK ON THE ROAD.</em></h2><p class="muted">Tell us about your vehicle, any warning lights and a preferred date if you have one. Then choose WhatsApp or SMS to prepare your enquiry, or call directly.</p><a class="number" href="tel:+447543366465">07543 366465</a><p class="muted">Tap the number to call.</p></div>
       <form class="formbox" id="enquiry-form"><h3>Quick Enquiry</h3><div class="fields">
-        <div><label for="customer">Your name</label><input id="customer" autocomplete="name" maxlength="80" placeholder="Your name"></div>
+        <div><label for="customer">Your name *</label><input id="customer" name="customer-name" autocomplete="name" maxlength="80" required placeholder="Your name"></div>
         <div><label for="vehicle">Vehicle make &amp; model *</label><input id="vehicle" required maxlength="100" placeholder="e.g. Ford Focus"></div>
-        <div><label for="registration">Registration</label><input id="registration" maxlength="20" placeholder="e.g. AB12 CDE"></div>
-        <div><label for="postcode">Postcode or area</label><input id="postcode" autocomplete="postal-code" maxlength="70" placeholder="Your area"></div>
-        <div class="wide"><label for="service">Service required *</label><select id="service" required><option value="">Please select</option><option>Servicing &amp; repairs</option><option>Vehicle diagnostics</option><option>Brakes</option><option>Engine repairs</option><option>Other / not sure</option></select></div>
-        <div class="wide"><label for="issue">Describe the problem</label><textarea id="issue" maxlength="1200" placeholder="Tell us about the symptoms or work needed..."></textarea></div>
-      </div><div class="form-buttons"><button type="submit" class="btn whatsapp">WhatsApp</button><button type="button" class="btn" id="sms">SMS</button><a class="btn dark" href="tel:+447543366465">Call Now</a></div><p class="help">WhatsApp and SMS open a prepared message. You must press Send yourself. Call Now does not require the form. No details are stored by this website. Standard SMS charges may apply.</p><p id="notice" role="status" aria-live="polite"></p></form>
+        <div><label for="registration">Vehicle registration *</label><input id="registration" name="registration" required maxlength="20" autocapitalize="characters" spellcheck="false" placeholder="e.g. AB12 CDE"></div>
+        <div><label for="postcode">Postcode or area *</label><input id="postcode" name="postcode-or-area" autocomplete="postal-code" maxlength="70" required placeholder="Your postcode or area"></div>
+        <div><label for="mileage">Mileage (optional)</label><input id="mileage" type="number" min="0" max="9999999" step="1" inputmode="numeric" placeholder="e.g. 65000"></div>
+        <div><label for="preferred-date">Preferred appointment date (optional)</label><input id="preferred-date" type="date" aria-describedby="date-help"><span class="field-help" id="date-help">Subject to availability; not a confirmed booking.</span></div>
+        <div><label for="warning">Warning lights (optional)</label><select id="warning"><option value="">Select if applicable</option><option>No warning lights</option><option>Engine management light</option><option>ABS / brake warning</option><option>Battery / charging warning</option><option>Oil pressure warning</option><option>Other warning light</option><option>Not sure</option></select></div>
+        <div><label for="service">Service required *</label><select id="service" required><option value="">Please select</option><option>Servicing &amp; repairs</option><option>Vehicle diagnostics</option><option>Brakes</option><option>Engine repairs</option><option>Other / not sure</option></select></div>
+        <div class="wide"><label for="issue">Describe the problem / warning lights</label><textarea id="issue" maxlength="1200" placeholder="Describe any symptoms, warning lights, fault codes or work needed..."></textarea></div>
+      </div><div class="form-buttons"><button type="submit" class="btn whatsapp">WhatsApp</button><button type="button" class="btn" id="sms">SMS</button><a class="btn dark" href="tel:+447543366465">Call Now</a></div><p class="help">Your name, vehicle registration, make/model, postcode or area, and service required are compulsory. Mileage, warning lights and preferred date are optional. WhatsApp and SMS open a draft; you must press Send yourself. A preferred date is a request, not a confirmed booking. Call Now doesn't need the form. This website does not store your details. Standard SMS charges may apply.</p><p id="notice" role="status" aria-live="polite"></p></form>
     </div></section>
 
     <section class="faq" id="faqs"><div class="wrap"><span class="eyebrow">Good to know</span><h2>FREQUENTLY ASKED <em>QUESTIONS.</em></h2><details class="question"><summary>Do you travel to customers?</summary><p>Yes, Smoking Spanners offers mobile vehicle services. Please provide your postcode to confirm the service area and availability.</p></details><details class="question"><summary>Can you help with warning lights?</summary><p>Diagnostics are among the advertised services. Explain the warning light and symptoms when contacting us.</p></details><details class="question"><summary>Can I get a quote?</summary><p>Yes, send the vehicle details and work required. Some faults need inspection before a price can be confirmed.</p></details><details class="question"><summary>Can I leave a review on the website?</summary><p>Reviews are handled by Google and Facebook, rather than stored here. Use the links in the Reviews section to find the business.</p></details></div></section>
@@ -165,8 +171,35 @@
       document.getElementById('year').textContent=new Date().getFullYear();
       const form=document.getElementById('enquiry-form'),notice=document.getElementById('notice');
       const val=id=>document.getElementById(id).value.trim();
-      function message(){return ['Hi Smoking Spanners, I would like to enquire about my vehicle.',val('customer')?'Name: '+val('customer'):'','Vehicle: '+val('vehicle'),val('registration')?'Registration: '+val('registration'):'',val('postcode')?'Area: '+val('postcode'):'','Service: '+val('service'),val('issue')?'Details: '+val('issue'):''].filter(Boolean).join('\n')}
-      function valid(){if(!form.reportValidity()){notice.textContent='Please complete the required fields.';return false}notice.textContent='';return true}
+      // Keep date validation local to the customer's own calendar day.
+      const appointmentInput=document.getElementById('preferred-date');
+      const now=new Date();
+      const localDate=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+      appointmentInput.min=localDate;
+      function appointmentDisplay(){
+        const date=val('preferred-date');
+        if(!date)return '';
+        const parts=date.split('-');
+        return parts.length===3?parts[2]+'/'+parts[1]+'/'+parts[0]:date;
+      }
+      function message(){
+        return [
+          'Hi Smoking Spanners, I would like to enquire about my vehicle.',
+          val('customer')?'Name: '+val('customer'):'',
+          'Vehicle: '+val('vehicle'),
+          'Registration: '+val('registration').toUpperCase(),
+          val('postcode')?'Postcode / area: '+val('postcode'):'',
+          val('mileage')?'Mileage: '+Number(val('mileage')).toLocaleString('en-GB')+' miles':'',
+          'Service required: '+val('service'),
+          val('warning')?'Warning lights: '+val('warning'):'',
+          val('issue')?'Problem / details: '+val('issue'):'',
+          appointmentDisplay()?'Preferred date (subject to availability): '+appointmentDisplay():''
+        ].filter(Boolean).join('\n');
+      }
+      function valid(){const customer=document.getElementById('customer');const reg=document.getElementById('registration');const postcode=document.getElementById('postcode');customer.setCustomValidity(customer.value.trim()?'':'Please enter your name.');reg.setCustomValidity(reg.value.trim()?'':'Please enter the vehicle registration.');postcode.setCustomValidity(postcode.value.trim()?'':'Please enter your postcode or area.');if(!form.reportValidity()){notice.textContent='Please complete the required fields.';return false}notice.textContent='';return true}
+      document.getElementById('customer').addEventListener('input',e=>e.target.setCustomValidity(''));
+      document.getElementById('registration').addEventListener('input',e=>e.target.setCustomValidity(''));
+      document.getElementById('postcode').addEventListener('input',e=>e.target.setCustomValidity(''));
       form.addEventListener('submit',e=>{e.preventDefault();if(!valid())return;notice.textContent='Opening WhatsApp — review your message and press Send.';location.href='https://wa.me/447543366465?text='+encodeURIComponent(message())});
       document.getElementById('sms').addEventListener('click',()=>{if(!valid())return;const apple=/iPad|iPhone|iPod/i.test(navigator.userAgent);notice.textContent='Opening SMS — review your message and press Send.';location.href='sms:+447543366465'+(apple?'&':'?')+'body='+encodeURIComponent(message())});
     })();
