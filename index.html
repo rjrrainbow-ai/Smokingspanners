@@ -217,6 +217,23 @@ header>.wrap.nav{position:relative;z-index:2}
 }
 @media(max-width:355px){.service-cards{grid-template-columns:1fr}.service-card h3{min-height:0}.service-card{padding:20px}}
 @media(prefers-reduced-motion:reduce){.service-card,.service-quote{transition:none}}
+
+/* Our Customer Promise — six clear commitments */
+.customer-promise{background:linear-gradient(180deg,#0b110a 0%,#101b0e 100%);border-top:1px solid #31472b;border-bottom:1px solid #31472b}
+.customer-promise .promise-intro{max-width:760px;margin-bottom:29px}
+.customer-promise h2{margin:10px 0 15px}
+.customer-promise .promise-subtitle{font-size:clamp(16px,2vw,19px);color:#d3e1ce;line-height:1.55;margin:0}
+.promise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.promise-card{position:relative;min-width:0;padding:27px 23px 24px;background:linear-gradient(150deg,#192718 0%,#111b11 85%);border:1px solid #405b35;border-radius:15px;overflow:hidden}
+.promise-card::before{content:"";position:absolute;top:0;left:23px;width:54px;height:3px;background:var(--green);border-radius:0 0 5px 5px}
+.promise-icon{width:52px;height:52px;display:flex;align-items:center;justify-content:center;margin-bottom:17px;color:var(--green);background:rgba(140,242,30,.07);border:1px solid rgba(140,242,30,.22);border-radius:12px}
+.promise-icon svg{display:block;width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.promise-card h3{font-size:19px;line-height:1.3;margin:0 0 9px;color:#f1f7ed}
+.promise-card p{font-size:14px;line-height:1.6;color:#c4d3bd;margin:0}
+.promise-note{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:28px;padding:21px 24px;border:1px solid #425d37;border-radius:13px;background:#142111}
+.promise-note p{color:#d9e5d4;margin:0;font-size:14px}
+@media(max-width:860px){.promise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.promise-grid{grid-template-columns:1fr;gap:12px}.promise-card{padding:22px 20px}.promise-icon{width:46px;height:46px;margin-bottom:12px}.promise-card h3{font-size:18px}.promise-note{padding:20px}.promise-note .btn{width:100%}}
 </style>
 </head>
 <body id="top">
@@ -295,6 +312,54 @@ header>.wrap.nav{position:relative;z-index:2}
       </div></div></section>
 
     <section id="how"><div class="wrap"><span class="eyebrow">Simple from the start</span><h2>HOW IT <em>WORKS.</em></h2><div class="steps"><div class="step"><b>01.</b><h3>Contact us</h3><p>Call, text or use WhatsApp to tell us about the vehicle.</p></div><div class="step"><b>02.</b><h3>Explain the issue</h3><p>Share the symptoms, warning lights, registration and postcode.</p></div><div class="step"><b>03.</b><h3>Agree the next step</h3><p>Discuss availability, whether the work is suitable for a mobile visit and any costs.</p></div></div></div></section>
+
+
+    <!-- OUR CUSTOMER PROMISE -->
+    <section class="customer-promise" id="customer-promise" aria-labelledby="promise-title">
+      <div class="wrap">
+        <div class="promise-intro">
+          <span class="eyebrow">What you can expect from us</span>
+          <h2 id="promise-title">OUR CUSTOMER <em>PROMISE.</em></h2>
+          <p class="promise-subtitle">Clear communication. Informed decisions. Professional repairs.</p>
+        </div>
+        <div class="promise-grid">
+          <article class="promise-card">
+          <span class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16v11H4z"/><path d="M8 7V5h8v2M8 11h8M8 15h4"/><path d="M17 14l2 2 3-4"/></svg></span>
+          <h3>Clear Pricing</h3>
+          <p>You&#x27;ll know the agreed charges before work begins.</p>
+        </article>
+          <article class="promise-card">
+          <span class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M6 4h9l3 3v13H6z"/><path d="M15 4v4h4"/></svg></span>
+          <h3>Your Approval</h3>
+          <p>Additional repairs require your permission.</p>
+        </article>
+          <article class="promise-card">
+          <span class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5h5M10.5 8v5"/></svg></span>
+          <h3>Evidence of Faults</h3>
+          <p>Where practical, we&#x27;ll show what needs repairing.</p>
+        </article>
+          <article class="promise-card">
+          <span class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></svg></span>
+          <h3>Parts Explained</h3>
+          <p>Understand the parts being fitted and the available options.</p>
+        </article>
+          <article class="promise-card">
+          <span class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h8M8 3h8v3H8z"/><path d="M7 5H5v16h14V5h-2"/><path d="M8 11h8M8 15h8M8 18h5"/></svg></span>
+          <h3>Repair Records</h3>
+          <p>Receive a clear record of the work carried out.</p>
+        </article>
+          <article class="promise-card">
+          <span class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-4.5a8.5 8.5 0 1 1 15.1-5"/><path d="M9 10a3 3 0 0 1 6 0c0 2-3 2-3 4M12 17h.01"/></svg></span>
+          <h3>Aftercare Support</h3>
+          <p>Know how to raise questions or concerns after a repair.</p>
+        </article>
+        </div>
+        <div class="promise-note">
+          <p>Questions about a repair or quotation? We're happy to discuss the next step.</p>
+          <a class="btn" href="#contact">Contact Smoking Spanners ↗</a>
+        </div>
+      </div>
+    </section>
 
     <section class="reviews" id="reviews"><div class="wrap"><div class="reviewbox"><div><span class="eyebrow">Customer feedback</span><h2>REVIEWS &amp; <em>RECOMMENDATIONS.</em></h2><p>Find Smoking Spanners on Google or Facebook to read feedback or leave a review on those platforms. Reviews are not stored on this website.</p></div><div class="reviewlinks"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Smoking%20Spanners%20Vehicle%20Repairs" target="_blank" rel="noopener noreferrer">★ Find on Google</a><a class="btn dark" href="https://www.facebook.com/share/1CKHCATjk7/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">f &nbsp; Find on Facebook</a></div><p class="help">Facebook opens the Smoking Spanners Page. The Google button currently searches for the business until a direct Google profile link is available.</p></div></div></section>
 
